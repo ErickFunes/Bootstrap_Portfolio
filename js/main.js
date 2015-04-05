@@ -1,8 +1,3 @@
-/*!
- * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
 
 // jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
@@ -176,3 +171,54 @@ function init() {
         icon: image
     });
 }
+
+// Solar sytem
+function split(str) {
+   var l = (str.indexOf(":"));
+
+ if(l > 0)
+ return  str.toUpperCase(str.slice(0, l));
+   
+  else
+  return "";     
+}
+
+ var infoBlue = $('.info p')
+ for( var i = 0, len = infoBlue.length; i < len; i++){
+ var moo = infoBlue[i].innerHTML;
+   
+   var darkBlue = split(moo);
+   
+ }
+
+$(document).ready(function() {
+ 
+// var moo = infoblue[2].match(/:([^ ]*)/);
+ // alert(moo);
+  
+  
+  
+  $('.planetOrbit').click(function(e){
+
+    e.preventDefault();
+    $('.planetOrbit').css("border-color", "#112B3D");
+
+   
+    $(this).css("border-color","#AADAFA")
+   
+    var planet = this.id
+
+    $('.pinfo').hide(0);
+    $("."+planet+"-info").slideDown("slow");
+
+
+});
+  $('.sun').click(function(e){
+  e.preventDefault();
+//    $('.planetOrbit').css("border-color", "#112B3D");
+     $('.planetOrbit').css("border-color", "#112B3D");
+    $('.pinfo').hide(0);
+    $('.sun-info').slideDown();
+  });
+
+});
